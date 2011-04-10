@@ -1,0 +1,16 @@
+<html>
+<head>
+<script src="quorastats.user.js"></script>
+<script>
+  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    if (tab.url.indexOf('quora') > -1) {
+      chrome.pageAction.show(tabId);
+    }
+  });
+  // Called when the user clicks on the browser action.
+  chrome.pageAction.onClicked.addListener(function(tab) {
+    chrome.tabs.executeScript(null, {file:"quorastats.user.js"});
+  });
+</script>
+</head>
+</html>

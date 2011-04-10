@@ -1,0 +1,18 @@
+{
+  "name": "Quora Statistics",
+  "version": "1.0",
+  "description": "Scrapes Quora and calculates statistics.",
+  "permissions": [
+    "http://www.quora.com/*", "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.quora.com/*"],
+      "js": ["jquery-1.5.1.js", "quorastats.user.js"]
+    }
+  ],
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_title": "Collect Stats"
+  }
+}
